@@ -60,7 +60,20 @@ public class Main {
             tong = tong + i;
         }
         System.out.println("Tong ="+tong);
-    }
+        //kiem tra n co phai so nguyen to hay khong
+        System.out.println("Nhap h:");
+        int h=sc.nextInt();
+        int p=0;
+        for(int j=1;h>=j;j++){
+            if(h%j==0){
+                p=p+1;
+            }}if(p==2){
+                System.out.println("So nguyen to la "+h);
+            }
+            else {
+                System.out.println("So nguyen to khong phai la "+h);
+            }
+        }
     static int tinhTong(int a,int b){
         return a+b;
     }
