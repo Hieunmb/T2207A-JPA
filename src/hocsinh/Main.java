@@ -3,41 +3,40 @@ package hocsinh;
 import session2.Student;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<HocSinh> sts = new ArrayList<>();
-        sts.add(new HocSinh("Hieu", "23/02", "ha noi", "t2207a", 9));
-        sts.add(new HocSinh("Hieu1", "23/02", "ha noi", "t2208a", 8));
-        sts.add(new HocSinh("Hieu2", "23/02", "ha noi", "t2209a", 7));
-        sts.add(new HocSinh("Hieu3", "23/02", "ha noi", "t2201a", 6));
-        sts.add(new HocSinh("Hieu4", "23/02", "ha noi", "t2202a", 5));
-        sts.add(new HocSinh("Hieu5", "23/02", "ha noi", "t2203a", 4));
-        sts.add(new HocSinh("Hieu6", "23/02", "ha noi", "t2204a", 3));
-        sts.add(new HocSinh("Hieu7", "23/02", "ha noi", "t2205a", 2));
-        sts.add(new HocSinh("Hieu8", "23/02", "ha noi", "t2206a", 1));
-        sts.add(new HocSinh("Hieu9", "23/02", "ha noi", "t2301a", 0));
-        for (int i = 0; i < sts.size(); i++) {
-            System.out.println(sts.get(i).getHoTen());
-            sts.get(i).baoCaoKetQua();
+        HocSinh[] hs = new HocSinh[10];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < hs.length; i++) {
+            System.out.println("Nhap ten");
+            String ten = sc.nextLine();
+            System.out.println("Nhap ngay sinh");
+            String ns = sc.nextLine();
+            System.out.println("Dia chi");
+            String dc = sc.nextLine();
+            System.out.println("Lop");
+            String lh = sc.nextLine();
+            System.out.println("Diem trung binh");
+            double tb = sc.nextDouble();
+            hs[i] = new HocSinh(ten, ns, dc, lh, tb);
         }
-        System.out.println("Danh sach hoc sinh gioi");
-        for (int i = 0; i < sts.size(); i++) {
-            sts.get(i).hocSinhGioi();
-        }
-        System.out.println("Danh sach hoc sinh diem thap");
-        for (int i = 0; i < sts.size(); i++) {
-            sts.get(i).hocSinhKem();
-        }
-        System.out.println("Sap xep diem trung binh");
-        int [] arr = new int [args.length];
-        int temp= arr[0];
-        for (int i = 0; i < args.length-1; i++) {
-            for (int j = 1; j < args.length; j++) {
-                if (sts.get(i).getDiemTB() < sts.get(j).getDiemTB()) {
-
+        HocSinh temp;
+        for (int i=0;i< hs.length-1;i++){
+            for (int j=0;j< hs.length;i++){
+                if(hs[j].getDiemTB()<hs[j+1].getDiemTB()) {
+                    temp = hs[j];
+                    hs[j] = hs[j + 1];
+                    hs[j + 1] = temp;
                 }
             }
+        }
+        for (int i=0;i< hs.length;i++){
+            hs[i].inThongTin();
+        }
+        for (int i=0;i< hs.length;i++){
+            hs[i].hocSinhGioi();
         }
     }
 }

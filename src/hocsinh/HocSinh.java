@@ -5,9 +5,9 @@ public class HocSinh {
     private String ngaySinh;
     private String diaChi;
     private String tenLopHoc;
-    private int diemTB;
+    private double diemTB;
 
-    public HocSinh(String hoTen, String ngaySinh, String diaChi, String tenLopHoc, int diemTB) {
+    public HocSinh(String hoTen, String ngaySinh, String diaChi, String tenLopHoc, double diemTB) {
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
         this.diaChi = diaChi;
@@ -47,11 +47,11 @@ public class HocSinh {
         this.tenLopHoc = tenLopHoc;
     }
 
-    public int getDiemTB() {
+    public double getDiemTB() {
         return diemTB;
     }
 
-    public void setDiemTB(int diemTB) {
+    public void setDiemTB(double diemTB) {
         this.diemTB = diemTB;
     }
     public void baoCaoKetQua(){
@@ -70,6 +70,13 @@ public class HocSinh {
                 }
             }
         }
+    }
+    public void inThongTin(){
+        System.out.println("Ho ten "+hoTen);
+        System.out.println("Ngay Sinh "+ngaySinh);
+        System.out.println("Dia Chi "+diaChi);
+        System.out.println("Ten Lop "+tenLopHoc);
+        System.out.println("Diem TB "+diemTB);
     }
     public void hocSinhGioi(){
         if(diemTB>=8){
