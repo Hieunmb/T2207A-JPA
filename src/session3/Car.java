@@ -3,13 +3,23 @@ package session3;
 public class Car {
     private String brand;
     private String name;
+    private  double price;
 
     public Car() {
 
     }
-    public Car(String brand,String name){
+    public Car(String brand,String name,double price){
         this.brand=brand;
         this.name=name;
+        this.price=price;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getBrand() {
