@@ -1,27 +1,52 @@
 package phonenumber;
 
+import java.util.ArrayList;
+
 public class PhoneNumber {
-    String ten;
-    String sdt;
+    private String name;
+    private ArrayList<String> phones = new ArrayList<>();
 
-    public PhoneNumber(String ten, String sdt) {
-        this.ten = ten;
-        this.sdt = sdt;
+    public PhoneNumber() {
     }
 
-    public String getTen() {
-        return ten;
+    public PhoneNumber(String name) {// kiểu dữ liệu arraylist không cần thêm tham số
+        this.name = name;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public String getName() {
+        return name;
     }
 
-    public String getSdt() {
-        return sdt;
+    public PhoneNumber setName(String name) {
+        this.name = name;
+        return this;
     }
 
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
+    public ArrayList<String> getPhones() {
+        return phones;
+    }
+
+    public PhoneNumber setPhones(ArrayList<String> phones) {
+        this.phones = phones;
+        return this;
+    }
+
+    public void addPhone(String phone) {
+        if (!phones.contains(phone)){
+            this.phones.add(phone);
+        }
+    }
+
+    public void updatePhone(String oldPhone, String newPhone) {
+        if (phones.contains(oldPhone)){
+            int i = phones.indexOf(oldPhone);// tìm vị trí
+            phones.add(i, newPhone);// nạp giá trị mới vào vị trí i
+        }
+    }
+
+    public void deletePhone(String phone) {
+        if (phones.contains(phone)){
+            phones.remove(phone);
+        }
     }
 }
