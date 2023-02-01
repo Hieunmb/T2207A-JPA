@@ -72,7 +72,7 @@ public class News implements INews {
 
     @Override
     public void Calculate() {
-        AverageRate=Ratelist[0]+Ratelist[1]+Ratelist[2]/3;
+        AverageRate=(Ratelist[0]+Ratelist[1]+Ratelist[2])/3;
         System.out.println("AverageRate "+AverageRate);
     }
 }
