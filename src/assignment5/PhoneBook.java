@@ -55,7 +55,6 @@ public class PhoneBook extends Phone {
     PhoneNumber searchPhone(String name) {
         for(String pb:PhoneList){
             if(pb.contains(name+",")){
-                return pb;
             }
         }
         return null;
